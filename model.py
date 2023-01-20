@@ -14,6 +14,7 @@ import re
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+
 df = pd.read_csv('/content/drive/MyDrive/CAIS Curriculum Project/projfiles/all-data.csv',delimiter=',',encoding='latin-1')
 top = [df.columns[0],df.columns[1]]
 new_row = pd.DataFrame({'neutral':top[0], 'According to Gran , the company has no plans to move all production to Russia , although that is where the company is growing .':top[1]}, index=[0])
@@ -166,7 +167,6 @@ print(yhat_probs)
 yhat_classes = np.argmax(yhat_probs,axis=1)
 print(yhat_classes)
 
-import numpy as np
 rounded_labels=np.argmax(Y_test, axis=1)
 rounded_labels
 
@@ -174,8 +174,6 @@ from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(rounded_labels, yhat_classes)
 cm
 
-from sklearn.metrics import confusion_matrix
-import seaborn as sns
 
 lstm_val = confusion_matrix(rounded_labels, yhat_classes)
 f, ax = plt.subplots(figsize=(5,5))
